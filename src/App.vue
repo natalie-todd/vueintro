@@ -1,7 +1,13 @@
 <template>
-  <div id="app">
-    <h1>{{msg}}</h1>
-    <p v-if="isAwesome">Galvanize is awesome</p>
+  <div id='app'>
+    <Movies />
+    <!-- <h1>{{msg}}</h1>
+    <p v-if='isAwesome'>Galvanize is awesome</p>
+    <p v-else>Galvanize is NOT awesome</p>
+    <ul>
+      <li v-for='item in items' :key='item'>{{item}}</li>
+    </ul>
+    <p :class='{ hideMe: isHidden }'>This is hidden</p> -->
   </div>
 </template>
 
@@ -12,11 +18,15 @@ export default {
     return {
       msg: 'Hello Galvanize',
       isAwesome: true,
+      items: ['Hello World', 'Hello Vue', 'Hello You'],
+      isHidden: true,
     };
   },
 };
 </script>
 
 <style>
-
+.hideMe {
+  display: none;
+}
 </style>
