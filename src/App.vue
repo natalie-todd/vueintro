@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <h1>{{msg}}</h1>
+    <p v-if="isAwesome">Galvanize is awesome</p>
   </div>
 </template>
 
@@ -10,6 +11,7 @@ export default {
   data() {
     return {
       msg: 'Hello Galvanize',
+      isAwesome: true,
     };
   },
 };
