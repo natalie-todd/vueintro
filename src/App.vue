@@ -12,8 +12,13 @@
 </template>
 
 <script>
+import Movies from './components/Movies.vue';
+
 export default {
   name: 'App',
+  components: {
+    Movies,
+  },
   data() {
     return {
       msg: 'Hello Galvanize',
