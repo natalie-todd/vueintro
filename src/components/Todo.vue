@@ -6,8 +6,12 @@
             <button type='submit' name='button'>Add Todo</button>
             </form>
             <ul>
-              <li v-for='todo in todos'>{{todo}}</li>
+              <li v-for='todo in todos'>
+                {{todo}}
+                <button @click='removeTodo(todo)' type='button' name='button'>Remove This Todo</button>
+                </li>
             </ul>
+            <button @click='clearTodos()' type='button' name='button'>Clear Todos</button>
         </div>
 </template>
 
@@ -15,16 +19,24 @@
 export default {
   data() {
     return {
-      newTodo: '',
-      todos: [],
+      newTodo: "",
+      todos: ['Learn Vue', 'Learn FEFs']
     };
   },
   methods: {
     addTodo() {
       this.todos.push(this.newTodo);
-      this.newTodo = '';
+      this.newTodo = "";
     },
-  },
+    clearTodos() {
+      this.todos = [];
+    },
+    removeTodo(todo) {
+      console.log(todo);
+      const index = this.todos.indexOf(todo);
+      this.todos.splice(index, 1);
+    }
+  }
 };
 </script>
 
