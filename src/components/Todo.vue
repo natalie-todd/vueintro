@@ -2,7 +2,7 @@
     <div class=''>
         <form @submit.prevent='addTodo()'>
             <label for='newTodo'>New Todo</label>
-            <input type='text' name='newTodo' id='newTodo' value=''>
+            <input v-model='newTodo' type='text' name='newTodo' id='newTodo' value=''>
             <button type='submit' name='button'>Add Todo</button>
             </form>
             <ul>
